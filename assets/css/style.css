@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(139 208 239);
+  color: rgb(0 53 70);
+}
+
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+input, textarea, button {
+  padding: 12px;
+  border: solid;
+  border-radius: 8px;
+}
+
+textarea {
+  padding: 12px;
+  border: solid rgb(46 45 77);
+  border-radius: 8px;
+}
+
+input, textarea {
+  background: rgb(139 208 239);
+  color: rgb(0 53 70);
+}
+
+button {
+  background: rgb(139 208 239);
+  color: rgb(0 53 70);
+}
+
+footer {
+  margin-top: 155px;
+  background: #1e1e1e;
+  padding: 15px;
+  text-align: center;
+  color: #aaa;
+}
