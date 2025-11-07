@@ -1,97 +1,62 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ثبت‌نام | مرکز دانلود بازی‌های ویدیویی</title>
-<link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ثبت‌نام | مرکز دانلود بازی‌های ویدیویی</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
-<main class="card" role="main" aria-labelledby="reg-title">
-  <h1 id="reg-title">ثبت‌نام</h1>
-  <form id="registerForm" action="/auth/register" method="post" novalidate>
-    <div>
-      <label for="fullname">نام و نام خانوادگی</label>
-      <br><input id="fullname" name="fullname" type="text" required maxlength="100" autocomplete="name">
-      <div class="error" id="fullnameError" aria-live="polite"></div>
-    </div>
 
-    <div>
-      <label for="username">نام کاربری</label>
-      <br><input id="username" name="username" type="text" required pattern="[A-Za-z0-9_\-]{3,30}" title="3 تا 30 کاراکتر، فقط حروف لاتین، عدد، زیرخط یا -">
-      <div class="error" id="usernameError" aria-live="polite"></div>
-    </div>
+<body class="farq">
+  <div class="container">
+    <h1 id="reg-title">ثبت‌نام</h1>
+    <form id="registerForm" action="/auth/register" method="post" novalidate>
+      <div>
+        <label for="fullname">نام و نام خانوادگی</label>
+        <br><input id="fullname" name="fullname" type="text" required maxlength="100" autocomplete="name">
+        <div class="error" id="fullnameError" aria-live="polite"></div>
+      </div>
 
-    <div>
-      <label for="email">ایمیل</label>
-      <br><input id="email" name="email" type="email" required autocomplete="email">
-      <div class="error" id="emailError" aria-live="polite"></div>
-    </div>
+      <div>
+        <label for="username">نام کاربری</label>
+        <br><input id="username" name="username" type="text" required pattern="[A-Za-z0-9_\-]{3,30}"
+          title="3 تا 30 کاراکتر، فقط حروف لاتین، عدد، زیرخط یا -">
+        <div class="error" id="usernameError" aria-live="polite"></div>
+      </div>
 
-    <div>
-      <label for="password">رمز عبور</label>
-      <br><input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
-      <div class="error" id="passwordError" aria-live="polite"></div>
-    </div>
+      <div>
+        <label for="email">ایمیل</label>
+        <br><input id="email" name="email" type="email" required autocomplete="email">
+        <div class="error" id="emailError" aria-live="polite"></div>
+      </div>
 
-    <div>
-      <label for="password2">تکرار رمز عبور</label>
-      <br><input id="password2" name="password2" type="password" required minlength="8" autocomplete="new-password">
-      <div class="error" id="password2Error" aria-live="polite"></div>
-    </div>
+      <div>
+        <label for="password">رمز عبور</label>
+        <br><input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
+        <div class="error" id="passwordError" aria-live="polite"></div>
+      </div>
 
-    <div>
-      <label for="role">نقش (اختیاری)</label>
-      <select id="role" name="role" aria-label="نقش کاربری">
-        <option value="user" selected>کاربر</option>
-        <option value="contributor">همکار</option>
-      </select>
-    </div>
+      <div>
+        <label for="password2">تکرار رمز عبور</label>
+        <br><input id="password2" name="password2" type="password" required minlength="8" autocomplete="new-password">
+        <div class="error" id="password2Error" aria-live="polite"></div>
+      </div>
 
-    <button type="submit">ثبت‌نام</button>
-  </form>
+      <div>
+        <label for="role">نقش (اختیاری)</label>
+        <select id="role" name="role" aria-label="نقش کاربری">
+          <option value="user" selected>کاربر</option>
+          <option value="contributor">همکار</option>
+        </select>
+      </div>
 
-  <p class="small">قبلا ثبت‌نام کرده‌اید؟ <a href="login.html">ورود</a></p>
-</main>
+      <button type="submit">ثبت‌نام</button>
+    </form>
 
-<script>
-document.getElementById('registerForm').addEventListener('submit', function(e){
-  let ok = true;
-  const fullname = document.getElementById('fullname');
-  const username = document.getElementById('username');
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
-  const password2 = document.getElementById('password2');
+    <p class="small">قبلا ثبت‌نام کرده‌اید؟ <a href="login.html">ورود</a></p>
 
-  // پاک کردن پیام‌های قبلی
-  document.getElementById('fullnameError').textContent = '';
-  document.getElementById('usernameError').textContent = '';
-  document.getElementById('emailError').textContent = '';
-  document.getElementById('passwordError').textContent = '';
-  document.getElementById('password2Error').textContent = '';
-
-  if(fullname.value.trim() === '') {
-    document.getElementById('fullnameError').textContent = 'نام و نام خانوادگی الزامی است';
-    ok = false;
-  }
-  if(!username.value.match(/^[A-Za-z0-9_\-]{3,30}$/)) {
-    document.getElementById('usernameError').textContent = 'نام کاربری معتبر نیست';
-    ok = false;
-  }
-  if(!email.value.includes('@')) {
-    document.getElementById('emailError').textContent = 'ایمیل نامعتبر است';
-    ok = false;
-  }
-  if(password.value.length < 8) {
-    document.getElementById('passwordError').textContent = 'رمز حداقل ۸ کاراکتر باشد';
-    ok = false;
-  }
-  if(password.value !== password2.value) {
-    document.getElementById('password2Error').textContent = 'رمزها یکسان نیستند';
-    ok = false;
-  }
-  if(!ok) e.preventDefault();
-});
-</script>
+  </div>
 </body>
+
 </html>
