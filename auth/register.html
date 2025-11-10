@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ثبت‌نام | مرکز دانلود بازی‌های ویدیویی</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت‌نام | GameHub</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body class="farq">
+
   <div class="container">
     <h1 id="reg-title">ثبت‌نام</h1>
     <form id="registerForm" action="/auth/register" method="post" novalidate>
       <div>
         <label for="fullname">نام و نام خانوادگی</label>
-        <br><input id="fullname" name="fullname" type="text" required maxlength="100" autocomplete="name">
+        <input id="fullname" name="fullname" type="text" required maxlength="100" autocomplete="name">
         <div class="error" id="fullnameError" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="username">نام کاربری</label>
-        <br><input id="username" name="username" type="text" required pattern="[A-Za-z0-9_\-]{3,30}"
-          title="3 تا 30 کاراکتر، فقط حروف لاتین، عدد، زیرخط یا -">
+        <input id="username" name="username" type="text" required pattern="[A-Za-z0-9_\-]{3,30}" title="3 تا 30 کاراکتر، فقط حروف لاتین، عدد، زیرخط یا -">
         <div class="error" id="usernameError" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="email">ایمیل</label>
-        <br><input id="email" name="email" type="email" required autocomplete="email">
+        <input id="email" name="email" type="email" required autocomplete="email">
         <div class="error" id="emailError" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="password">رمز عبور</label>
-        <br><input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
+        <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
         <div class="error" id="passwordError" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="password2">تکرار رمز عبور</label>
-        <br><input id="password2" name="password2" type="password" required minlength="8" autocomplete="new-password">
+        <input id="password2" name="password2" type="password" required minlength="8" autocomplete="new-password">
         <div class="error" id="password2Error" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="role">نقش (اختیاری)</label>
-        <select id="role" name="role" aria-label="نقش کاربری">
+        <select id="role" name="role">
           <option value="user" selected>کاربر</option>
           <option value="contributor">همکار</option>
         </select>
@@ -55,8 +53,7 @@
     </form>
 
     <p class="small">قبلا ثبت‌نام کرده‌اید؟ <a href="login.html">ورود</a></p>
-
   </div>
-</body>
 
+</body>
 </html>
