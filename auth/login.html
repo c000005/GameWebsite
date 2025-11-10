@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ورود | مرکز دانلود بازی‌های ویدیویی</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود | GameHub</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-
 </head>
-
 <body class="farq">
+
   <div class="container">
     <h1 id="login-title">ورود به حساب</h1>
     <p class="small">با حساب کاربری خود وارد شوید تا بتوانید بازی‌ها را دانلود کنید.</p>
@@ -17,15 +15,13 @@
     <form id="loginForm" action="/auth/login" method="post" novalidate>
       <div>
         <label for="email">ایمیل</label>
-        <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com"
-          autocomplete="email">
+        <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
         <div class="error" id="emailError" aria-live="polite"></div>
       </div>
 
       <div>
         <label for="password">رمز عبور</label>
-        <input id="password" name="password" type="password" required minlength="8" aria-required="true"
-          placeholder="رمز عبور" autocomplete="current-password">
+        <input id="password" name="password" type="password" required minlength="8" placeholder="رمز عبور" autocomplete="current-password">
         <div class="error" id="passwordError" aria-live="polite"></div>
       </div>
 
@@ -38,6 +34,6 @@
 
     <p class="small">حساب ندارید؟ <a href="register.html">ثبت‌نام</a></p>
   </div>
-</body>
 
+</body>
 </html>
